@@ -1,20 +1,44 @@
-# Daily Ping Technology Enterprise website
+# Daily Ping Technology Enterprise
 
-A responsive single-page company website built with plain HTML, CSS, and JavaScript.
+**Dependable technology for businesses that are ready to move forward.**
 
-## Preview locally
+Website: [dailyping.net](https://dailyping.net)
+Contact: support@dailyping.net
 
-Open `index.html` directly, or run a small local server from this folder:
+---
 
-```bash
-python3 -m http.server 8080
-```
+## About
 
-Then visit `http://localhost:8080`.
+Daily Ping Technology Enterprise is a technology company that helps growing businesses build dependable digital systems. We combine technical depth with a grounded understanding of day-to-day business operations — delivering solutions that are well built, realistic to run, and ready to scale.
 
-## Before publishing
+Our values: **Clear** (no jargon, no surprises) · **Reliable** (built for the real world) · **Responsive** (here when it matters)
 
-- Replace the general service copy with the company's exact offerings.
-- The contact form opens a pre-addressed email draft for `support@dailyping.net`. Add a backend or form service later if direct background submission is required.
-- Add verified phone, email, address, social links, and legal pages if required.
-- The active company logo is stored as `dailyping.png`.
+---
+
+## Services
+
+| # | Service | What we do |
+|---|---------|------------|
+| 01 | **Web & Digital** | Corporate websites, web applications, and e-commerce solutions |
+| 02 | **Cloud & Infrastructure** | Cloud migration, network solutions, and system integration |
+| 03 | **IT Support & Security** | Managed IT support, cybersecurity, monitoring & maintenance |
+| 04 | **Technology Consulting** | Digital strategy, process automation, and technology audits |
+
+---
+
+## Our Approach
+
+1. **Discover** — We listen, ask the right questions, and map the real problem.
+2. **Design** — We shape a focused solution with clear scope, priorities, and outcomes.
+3. **Deliver** — We build, test, launch, and keep you informed at every milestone.
+4. **Support** — We stay close after launch to maintain, improve, and help you scale.
+
+---
+
+## Tech Stack
+
+Built with plain HTML, CSS, and JavaScript — no frameworks, no dependencies, fast by default.
+
+---
+
+© Daily Ping Technology Enterprise. Built for better business.
