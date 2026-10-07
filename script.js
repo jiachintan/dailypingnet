@@ -1,66 +1,53 @@
+document.documentElement.classList.add('js');
+
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.site-nav');
+
+function closeMenu() {
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open navigation');
+  nav.classList.remove('open');
+}
 
 menuButton.addEventListener('click', () => {
   const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
   menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.classList.toggle('active', !isOpen);
+  menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
   nav.classList.toggle('open', !isOpen);
-  document.body.classList.toggle('menu-open', !isOpen);
 });
 
-nav.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.classList.remove('active');
-    nav.classList.remove('open');
-    document.body.classList.remove('menu-open');
+nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+
+const screenshotDialog = document.querySelector('.screenshot-dialog');
+const dialogImage = screenshotDialog.querySelector('.dialog-image');
+const dialogTitle = screenshotDialog.querySelector('#screenshot-title');
+
+document.querySelectorAll('.screen-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    const image = button.querySelector('img');
+    dialogImage.src = button.dataset.screen;
+    dialogImage.alt = image.alt;
+    dialogTitle.textContent = button.closest('figure').querySelector('.screen-number').textContent;
+    screenshotDialog.showModal();
+    document.body.classList.add('dialog-open');
   });
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-document.querySelectorAll('.hero .reveal').forEach((element) => element.classList.add('visible'));
-
-const form = document.querySelector('#contact-form');
-const formNote = document.querySelector('#form-note');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const service = formData.get('service');
-  const message = formData.get('message');
-
-  const subject = `Project enquiry: ${service} — ${name}`;
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Service: ${service}`,
-    '',
-    'Project details:',
-    message,
-  ].join('\n');
-
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.innerHTML = 'Email draft opened <span>↗</span>';
-  formNote.textContent = 'Your email app should now show a draft addressed to support@dailyping.net. Review it and press Send.';
-  formNote.classList.add('success');
-
-  window.location.href = `mailto:support@dailyping.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+screenshotDialog.querySelector('.dialog-close').addEventListener('click', () => screenshotDialog.close());
+screenshotDialog.addEventListener('click', (event) => {
+  // Backdrop clicks land on the dialog; clicks inside its bounding box stay open.
+  if (event.target !== screenshotDialog) return;
+  const bounds = screenshotDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+    screenshotDialog.close();
+  }
 });
+screenshotDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 
 document.querySelector('#year').textContent = new Date().getFullYear();

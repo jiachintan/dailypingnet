@@ -1,60 +1,41 @@
-# Daily Ping Technology Enterprise
+# Daily Ping
 
-**Dependable technology for businesses that are ready to move forward.**
+**Your silent safety net.**
 
 Website: [dailyping.net](https://dailyping.net)
-Contact: support@dailyping.net
 
----
+Support: [support@dailyping.net](mailto:support@dailyping.net)
 
-## About
+Daily Ping is a daily check-in application. Users tap Ping to check in, choose
+trusted contacts to receive overdue alerts, and review their check-in history.
+The homepage introduces the app using its six real screens in `AppScreenshots/`:
+check-in, contacts, history, profile, settings, and sign-in.
 
-Daily Ping Technology Enterprise is a technology company that helps growing businesses build dependable digital systems. We combine technical depth with a grounded understanding of day-to-day business operations — delivering solutions that are well built, realistic to run, and ready to scale.
+## Website
 
-Our values: **Clear** (no jargon, no surprises) · **Reliable** (built for the real world) · **Responsive** (here when it matters)
+Built with plain HTML, CSS, and JavaScript, with no build step or runtime
+framework. `index.html`, `app.css`, and `script.js` power the app introduction.
+The gallery supports full-screen screenshot previews, and the mobile layout
+uses a swipeable screenshot gallery. Support links open an email to the team.
+When app-store listings are available, add their verified URLs to the main call
+to action.
 
----
+## Local preview and deployment
 
-## Services
-
-| # | Service | What we do |
-|---|---------|------------|
-| 01 | **Web & Digital** | Corporate websites, web applications, and e-commerce solutions |
-| 02 | **Cloud & Infrastructure** | Cloud migration, network solutions, and system integration |
-| 03 | **IT Support & Security** | Managed IT support, cybersecurity, monitoring & maintenance |
-| 04 | **Technology Consulting** | Digital strategy, process automation, and technology audits |
-
----
-
-## Our Approach
-
-1. **Discover** — We listen, ask the right questions, and map the real problem.
-2. **Design** — We shape a focused solution with clear scope, priorities, and outcomes.
-3. **Deliver** — We build, test, launch, and keep you informed at every milestone.
-4. **Support** — We stay close after launch to maintain, improve, and help you scale.
-
----
-
-## Tech Stack
-
-Built with plain HTML, CSS, and JavaScript — no frameworks, no dependencies, fast by default.
+Run `python3 -m http.server 8000` from this directory, then open
+`http://localhost:8000/`. GitHub Pages publishes the `main` branch from the
+repository root using the custom domain in `CNAME`.
 
 ## Privacy Policy
 
-The public policy lives at [dailyping.net/privacy](https://dailyping.net/privacy)
-and is served from `privacy/index.html`. It requires no sign-in or JavaScript.
-The homepage footer links to it. GitHub Pages serves the extensionless `/privacy`
-URL by redirecting to `/privacy/` and loading the directory's index page.
+The public policy at [dailyping.net/privacy](https://dailyping.net/privacy)
+is served from `privacy/index.html`, with `styles.css` and `privacy/privacy.css`.
+It requires no sign-in or JavaScript. Navigation, the homepage privacy section,
+and the footer link to it. GitHub Pages redirects `/privacy` to `/privacy/`.
 
-To preview locally, run `python3 -m http.server 8000` from this directory and
-open `http://localhost:8000/privacy`. Publishing changes to the GitHub Pages
-source branch (`main`, repository root) deploys the policy with the website.
+Users delete their account and all account data in the app through
+**Profile → Settings → Delete account**. When data practices change, update the
+policy's dates and notify users as described in the policy. Keep retention
+wording aligned with actual application storage and provider settings.
 
-When changing data practices, update the policy's effective and last-updated
-dates and notify users as described in the policy. Retention wording uses the
-account lifecycle and processing purposes rather than unverified day counts;
-keep it aligned with the application's actual storage and provider settings.
-
----
-
-© Daily Ping Technology Enterprise. Built for better business.
+© Daily Ping Technology Enterprise.
