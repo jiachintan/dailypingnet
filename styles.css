@@ -187,6 +187,8 @@ h2 { margin: 0; font-size: clamp(42px, 4.2vw, 66px); line-height: 1.02; letter-s
 .footer-email:hover { color: var(--lime); }
 .back-to-top { padding-bottom: 5px; border-bottom: 1px solid #647469; font-size: 11px; }
 .footer-bottom { display: flex; justify-content: space-between; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); color: #5e6f64; font: 400 8px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.footer-privacy { color: #b8c5bc; text-decoration: underline; text-underline-offset: 4px; }
+.footer-privacy:hover { color: var(--lime); }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }

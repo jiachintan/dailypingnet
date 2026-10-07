@@ -39,6 +39,22 @@ Our values: **Clear** (no jargon, no surprises) · **Reliable** (built for the r
 
 Built with plain HTML, CSS, and JavaScript — no frameworks, no dependencies, fast by default.
 
+## Privacy Policy
+
+The public policy lives at [dailyping.net/privacy](https://dailyping.net/privacy)
+and is served from `privacy/index.html`. It requires no sign-in or JavaScript.
+The homepage footer links to it. GitHub Pages serves the extensionless `/privacy`
+URL by redirecting to `/privacy/` and loading the directory's index page.
+
+To preview locally, run `python3 -m http.server 8000` from this directory and
+open `http://localhost:8000/privacy`. Publishing changes to the GitHub Pages
+source branch (`main`, repository root) deploys the policy with the website.
+
+When changing data practices, update the policy's effective and last-updated
+dates and notify users as described in the policy. Retention wording uses the
+account lifecycle and processing purposes rather than unverified day counts;
+keep it aligned with the application's actual storage and provider settings.
+
 ---
 
 © Daily Ping Technology Enterprise. Built for better business.
